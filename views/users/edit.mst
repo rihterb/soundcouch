@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../../stylesheets/style.css">
+    {{>head}}
+</head>
+
+<body>
+    <div class="header">
+        <a href="../../" class="logo">Soundcouch</a>
+        <div class="header-right">
+            <a href="../../music/new">Upload...</a>
+            <a href="../../playlists/new">Create Playlist</a>
+            <a href="../../users" class="active">Users</a>
+            <a href="../../music">Music</a>
+            <a href="../../about">About</a>          
+            {{^currentUser}}
+            <a href="../../auth/login">Log In</a>
+            
+            <a href="../auth/register">Register</a>
+            {{/currentUser}}
+                        				{{#currentUser}}
+				<a href="../../users/{{_id}}">{{login}}</a>	
+				<a href="../../../auth/logout">Log Out</a>	
+				{{/currentUser}}
+        </div>
+    </div>
+    <div class="mainusers">
+        <div class="marginbox">
+        {{#items}}
+            <div class="sidebar">
+                <img class="avaedit" src="{{avaUrl}}" alt="User Image">
+                <a class="activeside" id="noselect"><i class="fa fa-fw fa-user"></i>{{login}}</a>
+            </div>                   
+            <div class="userlist">
+                        <div class="usertext">
+                        <form id="editform" class="edit" enctype="multipart/form-data" method="post" action="">
+                            <h3>Name: </h3>
+                            <input name="fullname" type="text" value="{{fullname}}">
+                            <h3>Username:</h3>
+                            <p>{{login}}</p>
+                            <h3>Bio:</h3>
+                            <textarea name="bio" form="editform" wrap="soft" rows="4" cols="40" placeholder="Your bio is empty, just like my soul...">{{bio}}</textarea>
+                            
+                            <h3>Change Profile Pic:</h3>
+                            <input name="image" type='file' onchange="readURL(this);" />
+                            <br>
+                            <br>
+                            <input type='submit' id="savebtn" value='Save'>
+                            <br>
+                        </form>
+                        {{/items}}
+                        {{#Playlists}}
+                        {{/Playlists}}
+                       </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
+    <div class="footer">Text3</div>
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.1.0/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../../../javascripts/edit.js"></script>
+</body>
+
+</html>

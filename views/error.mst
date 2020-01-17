@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../stylesheets/style1.css">
+    {{>head}}
+</head>
+
+<body>
+    <div class="header">
+        <a href="/" class="logo">Soundcouch</a>
+        <div class="header-right">
+            <a href="music/new">Upload...</a>
+            <a href="playlists/new">Create Playlist</a>
+            <a href="users">Users</a>
+            <a href="music">Music</a>
+            <a href="about">About</a>
+            {{^currentUser}}
+            <a href="auth/login">Log In</a>
+            <a href="auth/register">Sign Up</a>
+            {{/currentUser}}
+                            				{{#currentUser}}
+				<a href="users/{{_id}}">{{login}}</a>	
+				<a href="../auth/logout">Log Out</a>	
+				{{/currentUser}}
+        </div>
+    </div>
+    <!-- <div class="back"></div> -->
+    <div class="mainmusic1">
+    <img class="error" src="images/error.png">
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>

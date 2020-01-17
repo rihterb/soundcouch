@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../stylesheets/style1.css">
+    {{>head}}
+</head>
+
+<body>
+    <div class="header">
+        <a href="../" class="logo">Soundcouch</a>
+        <div class="header-right">
+            <a href="../music/new">Upload...</a>
+            <a href="new">Create Playlist</a>
+            <a href="../users">Users</a>
+            <a href="../music">Music</a>
+            <a href="../about">About</a>
+            {{^currentUser}}
+                            <a href="../../auth/login">Log In</a>
+                <a href="../../auth/register">Sign Up</a>
+                {{/currentUser}}
+                            				{{#currentUser}}
+				<a href="../users/{{_id}}">{{login}}</a>	
+				<a href="../../auth/logout">Log Out</a>	
+				{{/currentUser}}
+        </div>
+    </div>
+    <!-- <div class="back"></div> -->
+    <div class="mainmusic">
+        <div class="marginbox">
+            <div class="sidebar">
+            {{#items}}
+                <img class="cover" src="{{coverUrl}}">
+                <a class="activeside" id="noselect"><i class="fa fa-fw fa-play"></i>{{name}}</a>
+                <form id="delete" class="appnitro" enctype="multipart/form-data" method="post" action="/playlists/{{_id}}/delete">
+                    <input type="submit" id="deletebutton" value="Delete">
+                </form>
+            {{/items}}
+            </div>
+            <div class="musiclist">
+            
+                <div class="musictext">
+
+                {{#items}}
+                    <h1 class="desc">{{name}}</h1>
+                    <h3 class="desc">Description:</h3>
+                    <p class="desc">{{description}}</p>
+                    <h1 class="descemptypl">Was created {{timeAdded}}</h1>
+                {{/items}}
+                {{#Playlist}}
+                    <figure>
+                        <figcaption><a class="textSong" href="/music/{{_id}}">{{name}}</a></figcaption>
+                        <audio controls src="{{code}}">
+                                    Your browser does not support the
+                                    <code>audio</code> element.
+                        </audio>
+                    </figure>
+                {{/Playlist}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<link rel="stylesheet" href="../stylesheets/style1.css">
+		{{>head}}
+	</head>
+
+	<body>
+		<div class="header">
+			<a href="/" class="logo">Soundcouch</a>
+			<div class="header-right">
+				<a class="active" href="new">Upload...</a>
+				<a href="../playlists/new">Create Playlist</a>
+				<a href="../users">Users</a>
+				<a href="../music">Music</a>
+				<a href="../about">About</a>
+				{{^currentUser}}
+				<a href="../../auth/login">Log In</a>	
+                <a href="../../auth/register">Sign Up</a>
+				{{/currentUser}}
+				{{#currentUser}}
+				<a href="../users/{{_id}}">{{login}}</a>	
+				<a href="../../auth/logout">Log Out</a>	
+				{{/currentUser}}
+			</div>
+		</div>
+		<!-- <div class="back"></div> -->
+		<div class="mainmusic">
+			<div class="marginbox">
+				{{! <div class="sidebar">
+					<a class="activeside" id="noselect"><i class="fa fa-fw fa-music"></i> Add Music</a>
+				</div> }}
+				<div class="musiclist">
+					<form id="form_87700" class="appnitro" enctype="multipart/form-data"
+						method="post" action="">
+						<div class="form_description">
+							<h2>Add a Song</h2>
+						</div>
+						<ul>
+
+							<li id="li_1">
+								<label class="description" for="name">Song Name</label>
+								<div>
+									<input placeholder="Band Name - Song Name (or just the name of the song)" id="name" name="name" class="element text medium"
+										type="text" required maxlength="255" value="" />
+								</div>
+							</li> <li id="li_2">
+								<label class="description" for="element_2">Description <i>(Optional)</i></label>
+								<div>
+									<textarea rows="15" cols="33" placeholder="Description here (you can leave it empty if you want)" id="element_2" name="element_2" class="element text large"
+										type="textarea" maxlength="255" value=""></textarea>
+								</div>
+								
+							</li> 
+							<br>
+							<label class="description" for="element_3">Cover Art</label>
+							<li id="li_3">
+								
+								<div>
+									<input id="element_3" required name="element_3" class="element file" type="file"/>
+								</div>
+								
+							</li>
+							<br>
+							<label class="description" for="element_4">Upload an audio file</label> 
+							<li id="li_4">
+								
+								<div>
+									<input id="element_4" required name="element_4" class="element file" type="file"/>
+								</div>
+							</li> 
+							<li id="li_5">
+								<span>
+									<input id="element_5_1" name="element_5_1" class="element checkbox"
+										type="checkbox" value="1" />
+									<label class="choice" for="element_5_1">Private</label>
+								</span>
+							</li>
+							<li class="buttons">
+								<input type="hidden" name="form_id" value="87700"/>
+
+								<input id="saveForm" class="button_text" type="submit" name="submit"
+									value="Save" />
+							</li>
+						</ul>
+					</form>
+					<div class="musictext">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{{>footer}}
+	</body>
+
+</html>

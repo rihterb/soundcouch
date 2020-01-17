@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../stylesheets/style1.css">
+    <meta charset="utf-8">
+    <title>Soundcouch | About</title>
+    <meta name="description" content="Free online music player">
+    <meta name="author" content="Vasily Richter">
+</head>
+
+<body>
+    <div class="background">
+        <div class="header">
+            <a href="/" class="logo">Soundcouch</a>
+            <div class="header-right">
+                <a href="../music/new">Upload...</a>
+                <a href="../playlists/new">Create Playlist</a>
+                <a href="../users">Users</a>
+                <a href="../music">Music</a>
+                <a href="../about">About</a>
+                <a class="active" href="login">Log In</a>
+                <a href="register">Sign Up</a>
+            </div>
+        </div>
+
+        <div class="mainmusic">
+            <div class="marginbox">
+				<div class="userdetails">
+                    <h1>Log in</h1>
+                    <form id="loginform" class="login" enctype="multipart/form-data" method="post" action="">
+                        <section>
+                        <label class="smth" for="login">Login:<br>
+                        <input placeholder="login here..." id="login" name="username" class="loginin" type="text" required maxlength="255" value=""/>
+                        </label>
+                        <br>
+                        <label class="smth" for="password">Password:<br>
+                        <input placeholder="password here..." id="pass" name="password" class="password" type="password" required maxlength="255" value=""/>
+                        </label>
+                        <br>
+                        <input value="Log in" id="logbtn" class="log_in" type="submit"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {{>footer}}
+    </div>
+    <script src="../../javascripts/login.js"></script>
+</body>
+
+</html>

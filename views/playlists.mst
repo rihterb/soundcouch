@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../stylesheets/style1.css">
+    {{>head}}
+</head>
+
+<body>
+    <div class="header">
+        <a href="/" class="logo">Soundcouch</a>
+        <div class="header-right">
+            <a href="music/new">Upload...</a>
+            <a href="playlists/new">Create Playlist</a>
+            <a href="users">Users</a>
+            <a class="active" href="music">Music</a>
+            <a href="about">About</a>
+            {{^currentUser}}
+                            <a href="auth/login">Log In</a>
+                <a href="auth/register">Sign Up</a>
+                {{/currentUser}}
+                            				{{#currentUser}}
+				<a href="users/{{_id}}">{{login}}</a>	
+				<a href="../auth/logout">Log Out</a>	
+				{{/currentUser}}
+        </div>
+    </div>
+    <!-- <div class="back"></div> -->
+    <div class="mainmusic">
+        <div class="marginbox">
+            <div class="sidebar">
+                <form id="search" class="appnitro" enctype="multipart/form-data" method="get" action="playlists">
+                <input type="text" id="searchbar" name="name" minlength="1" maxlength="50" size="10" placeholder="Search...">
+                <input type="hidden" name="page" value="0">
+                <input type="submit" id="searchbutton" style="position: absolute; left: -9999px">
+                </form>
+
+                <br>
+                {{#isEmpty}}
+                    
+                    <br><p id="invert">Getting result by </p><p id="search"> {{searchBar}}</p><p id="invert">...</p><br>
+                                        <p id="invert">Results found </p><p id="search">{{count}}</p>
+                    <br>
+                    <br>
+                <a class="activeside">Empty...</a>
+                {{/isEmpty}}
+                {{^isEmpty}}
+                    
+                    {{#searchBar}}<br><p id="invert">Getting result by </p><p id="search"> {{searchBar}}</p><p id="invert">...</p><br>
+                    <p id="invert">Results found </p><p id="search">{{count}}</p>
+                    <br>{{/searchBar}}
+                    
+                    <br>
+                    {{#Playlists}}
+                        <a href="playlists/{{_id}}"><i class="fa fa-fw fa-play"></i>{{name}}</a>
+                    {{/Playlists}}
+                        {{#nextPage}}
+                        <br>
+
+                        {{#prevPageVisibility}}
+                            <a id="search" class="arrow" href="/playlists?name={{searchBar}}&page={{prevPage}}"><i class="fa fa-fw fa-arrow-left"></i></a>
+                        {{/prevPageVisibility}}
+                            
+                        {{#nextPageVisibility}}
+                            <a id="search" class="arrow" href="/playlists?name={{searchBar}}&page={{nextPage}}"><i class="fa fa-fw fa-arrow-right"></i></a>
+                        {{/nextPageVisibility}}
+                        {{/nextPage}}
+                {{/isEmpty}}
+            </div>
+            <div class="musiclist">
+                <div class="musictext">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{>footer}}
+</body>
+
+</html>

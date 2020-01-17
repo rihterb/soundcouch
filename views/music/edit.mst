@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../../stylesheets/style1.css">
+    
+    {{>head}}
+</head>
+
+<body>
+    <div class="header">
+        <a href="../../" class="logo">Soundcouch</a>
+        <div class="header-right">
+            <a href="../new">Upload...</a>
+            <a href="../../playlists/new">Create Playlist</a>
+            <a href="../../users">Users</a>
+            <a href="../../music" class="active">Music</a>
+            <a href="../../about">About</a>
+            {{^currentUser}}
+                            <a href="../../../auth/login">Log In</a>
+                            
+                <a href="../../../auth/register">Sign Up</a>
+            {{/currentUser}}
+            				{{#currentUser}}
+				<a href="../../users/{{_id}}">{{login}}</a>	
+				<a href="../../../auth/logout">Log Out</a>	
+				{{/currentUser}}
+        </div>
+    </div>
+
+    <div class="mainmusic">
+        <div class="marginbox">
+            <div class="sidebar">
+            {{#items}}
+                <img class="cover" src="{{songUrl}}">
+                <a class="activeside" id="noselect"><i class="fa fa-fw fa-play"></i>{{name}}</a>
+            {{/items}}
+            </div>
+            <div class="musiclist">
+            
+                <div class="musictext">
+                {{#items}}
+                <form id="editmusicform" class="edit" enctype="multipart/form-data" method="post" action="">
+                    <h3>Name:</h3>
+                    <input type="text" name="name" value="{{name}}">
+                    <h3>Description:</h3>
+                    <textarea name="desc" form="editmusicform" wrap="soft" rows="4" cols="40" placeholder="Your description is empty, just like my wallet...">{{yearPublished}}</textarea>
+                    <br>
+                    <h3>Change Image:</h3>
+                    <input name="image" type='file' onchange="readURL(this);" />
+                    <br>
+                    <br>
+                    <input type='submit' id="savebtn" value='Save'>
+                </form>
+                {{/items}}
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../stylesheets/style1.css">
+    
+    {{>head}}
+</head>
+
+<body>
+    <div class="header">
+        <a href="../" class="logo">Soundcouch</a>
+        <div class="header-right">
+            <a href="new">Upload...</a>
+            <a href="../playlists/new">Create Playlist</a>
+            <a href="../users">Users</a>
+            <a href="../music" class="active">Music</a>
+            <a href="../about">About</a>
+            {{^currentUser}}
+                            <a href="../../auth/login">Log In</a>
+                            
+                <a href="../../auth/register">Sign Up</a>
+            {{/currentUser}}
+            				{{#currentUser}}
+				<a href="../users/{{_id}}">{{login}}</a>	
+				<a href="../../auth/logout">Log Out</a>	
+				{{/currentUser}}
+        </div>
+    </div>
+    <div class="modal" id="backModal">
+        <div class="mcontent">
+            <p class="modaltext">This action will delete the following track.</p>
+            <div id="cancel">
+                <form id="cancel" class="appnitro" enctype="multipart/form-data">
+                    <input type="submit" id="close" value="Cancel">
+                </form>
+            </div>
+            <div id="confirm">
+            {{#items}}
+                <form id="delete" class="appnitro" enctype="multipart/form-data" method="post" action="/music/{{id}}/delete">
+                    <input type="submit" id="deletebutton1" value="Delete">
+                </form>
+            {{/items}}
+            </div>
+        </div>
+    </div>
+
+    <div class="mainmusic">
+        <div class="marginbox">
+            <div class="sidebar">
+            {{#items}}
+                <img class="cover" src="{{songUrl}}">
+                <a class="activeside" id="noselect"><i class="fa fa-fw fa-play"></i>{{name}}</a>
+                {{#rightUser}}
+                <a class="" id="" href="{{_id}}/edit">Edit...</a>
+                {{/rightUser}}
+                <button type="button" id="deletebutton" class="remove">Delete</button>
+            {{/items}}
+            </div>
+            <div class="musiclist">
+            
+                <div class="musictext">
+                {{#items}}
+                    <figure>
+                        <figcaption>{{name}}</figcaption>
+                        <audio controls src="{{code}}">
+                                Your browser does not support the
+                                <code>audio</code> element.
+                        </audio>
+                    </figure>
+                    <h3 class="desc">Description:</h3>
+                    <p class="desc">{{yearPublished}}</p>
+                    <p class="descempty">"{{name}}" is licensed under a Basic Copyright License.</p>
+                {{/items}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../javascripts/modal.js"></script>
+    {{>footer}}
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="stylesheets/style.css">
+{{>head}}
+</head>
+
+<body>
+
+    {{>header}}
+
+    <div class="back"></div>
+    <div class="main">
+        <div>
+            <h1>Soundcouch</h1>
+            <hr>
+            <p>
+                Soundcouch is a free online music player. Listen to any music without even getting up from a couch.
+            </p>
+        </div>
+    </div>
+
+{{>footer}}
+
+</body>
+
+</html>

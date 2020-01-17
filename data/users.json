@@ -1,0 +1,20 @@
+{
+    "nextId": 2,
+    "items": [{
+        "id": 0,
+        "login": "rhadyniak",
+        "role": 1,
+        "fullname": "Ruslan Anatolievich Hadyniak",
+        "registeredAt": "2018-09-19T10:05:19Z",
+        "avaUrl": "http://progbase.herokuapp.com/images/progbase.jpg",
+        "isDisabled": false
+    }, {
+        "id": 1,
+        "login": "user1",
+        "role": 0,
+        "fullname": "Anatoliy",
+        "registeredAt": "2012-10-10T11:12:19Z",
+        "avaUrl": "http://progbase.herokuapp.com/images/progbase1.jpg",
+        "isDisabled": true
+    }]
+}

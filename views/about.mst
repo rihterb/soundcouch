@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="stylesheets/styleabout.css">
+    <meta charset="utf-8">
+    <title>Soundcouch | About</title>
+    <meta name="description" content="Free online music player">
+    <meta name="author" content="Vasily Richter">
+</head>
+
+<body>
+    <div class="background">
+        <div class="header">
+            <a href="/" class="logo">Soundcouch</a>
+            <div class="header-right">
+                <a href="music/new">Upload...</a>
+                <a href="playlists/new">Create Playlist</a>
+                <a href="users">Users</a>
+                <a href="music">Music</a>
+                <a class="active" href="about">About</a>
+                {{^currentUser}}
+                <a href="auth/login">Log In</a>
+                <a href="auth/register">Sign Up</a>
+                {{/currentUser}}
+                            				{{#currentUser}}
+				<a href="users/{{_id}}">{{login}}</a>	
+				<a href="../auth/logout">Log Out</a>	
+				{{/currentUser}}
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="text">
+                <p>
+                    Soundcouch is a free online music player. Listen to any music without even getting up from a couch. <br><br> The site was created by Vasily Richter.
+                </p>
+            </div>
+            <div class="image">
+                <img src="images/photo.jpg">
+            </div>
+        </div>
+        <div class="footer">Text3</div>
+    </div>
+</body>
+
+</html>

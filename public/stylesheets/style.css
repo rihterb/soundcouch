@@ -1,0 +1,284 @@
+    .header {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        font-family: 'Lato', sans-serif;
+        color: white;
+        background-color: #1a1a1a;
+        width: 100%;
+        /* height: 6.5%; */
+        z-index: 5;
+        height: 6.5%;
+    }
+    
+    #userPlaylist {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 88.5%;
+        cursor: pointer;
+        padding: 13px 17px 14px;
+        overflow: hidden;
+        border: none;
+        font-family: 'Lato', sans-serif, bold;
+        color: rgba(255, 255, 255, 1);
+        text-align: center;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        background: rgba(40, 40, 40, 0.7);
+        -webkit-box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.3);
+    }
+    
+    .inline {
+        display: inline-block;
+        overflow: hidden;
+    }
+    
+    .playlistImg {
+        object-fit: cover;
+        height: 40px;
+        width: 40px;
+    }
+    
+    .playlistText {
+        margin-left: 10px;
+    }
+    
+    a:hover,
+    a:focus,
+    a:active,
+    a:visited,
+    a:link {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .logo {
+        float: left;
+        display: block;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: bolder;
+        font-size: 30px;
+        margin-left: 10%;
+    }
+    
+    .active {
+        background: rgb(78, 78, 78);
+    }
+    
+    .activeside {
+        color: #1a1a1a;
+        background-color: #f3f3f3;
+    }
+    
+    #noselect {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Old versions of Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+    }
+    
+    .back {
+        -webkit-box-sizing: content-box;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+        width: 0;
+        padding: 20px 50% 15%;
+        overflow: hidden;
+        border: none;
+        font-family: 'Lato', sans-serif;
+        color: rgba(255, 255, 255, 1);
+        text-align: center;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        background: url("../images/back.jpg");
+        background-position: 72% 15%;
+        -webkit-background-origin: padding-box;
+        background-origin: padding-box;
+        -webkit-background-clip: border-box;
+        background-clip: border-box;
+        -webkit-background-size: auto auto;
+        background-size: auto auto;
+        -webkit-box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    .body {
+        overflow: hidden;
+        background-color: #ffffff;
+    }
+    
+    .header-right {
+        margin-right: 10%;
+    }
+    
+    .header-right a {
+        overflow: auto;
+        float: right;
+        display: block;
+        text-align: center;
+        padding: 22px 16px;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .header-right a:hover {
+        background: #ddd;
+        color: black;
+    }
+    
+    .main {
+        margin-top: 3%;
+        margin-bottom: 3%;
+        margin-right: 15%;
+        margin-left: 15%;
+        text-align: center;
+        text-overflow: ellipsis;
+    }
+    
+    .mainusers {
+        /* margin-bottom: 3%; */
+        margin-top: 3%;
+        width: 100%;
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        position: absolute;
+        text-overflow: ellipsis;
+        height: 93.5%;
+        z-index: 0;
+        background-color: #222831;
+    }
+    
+    .ava {
+        height: 150px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    
+    .avaedit {
+        height: 150px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    
+    .sidebar {
+        min-height: 100%;
+        width: 275px;
+        /* position: absolute; */
+        z-index: 0;
+        top: 0;
+        float: left;
+        /* display: inline-block; */
+        background-color: #1a1a1a;
+        overflow-x: hidden;
+        bottom: 0;
+    }
+    
+    .marginbox {
+        min-height: 50%;
+        margin-right: 30%;
+        margin-left: 30%;
+        text-align: center;
+        text-overflow: ellipsis;
+        display: flex;
+    }
+    
+    .usertext {
+        margin-top: 7%;
+        text-align: left;
+        margin-left: 5%;
+    }
+    
+    .userlist {
+        min-height: 100%;
+        width: 100%;
+        /* position: absolute; */
+        z-index: 0;
+        /* display: inline-block; */
+        background-color: #f4f4f4;
+        overflow-x: hidden;
+        float: left;
+        margin: 0;
+    }
+    
+    .userlink {
+        margin-top: 6px;
+    }
+    
+    .sidebar a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #f4f4f4;
+        background: #1a1a1a;
+        display: block;
+        left: 0;
+        margin: 0;
+    }
+    
+    .sidebar a:hover {
+        background: #c0c0c0;
+        color: #000000;
+    }
+    
+    .avatar {
+        border-radius: 50%;
+        height: 20%;
+        margin: 10%;
+    }
+    
+    .avatar1 {
+        border-radius: 50%;
+        height: 25%;
+        margin: 10%;
+        filter: invert();
+    }
+    
+    .main h1 {
+        font-size: 3vw;
+        font-family: 'Lato', sans-serif;
+        font-weight: bold;
+    }
+    
+    .mainusers p {
+        font-family: 'Lato', sans-serif;
+        font-size: 1vw;
+    }
+    
+    .main p {
+        font-family: 'Lato', sans-serif;
+        font-size: 2vw;
+        font-weight: bold;
+    }
+    
+    .footer {
+        left: 0;
+        padding-top: 2%;
+        width: 100%;
+        overflow: hidden;
+        background-color: #000000;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        height: 1.5%;
+    }
+    
+    body {
+        margin: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
